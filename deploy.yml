@@ -1,7 +1,7 @@
 ---
 - name: Pull Docker Image from Docker Hub
   hosts: localhost
-  remote_user: rohan-sonawane
+  remote_user: chinmay30t
   become: false
   tasks:
     - name: Remove existing container if running
@@ -10,7 +10,7 @@
 
     - name: Pull Docker Image
       docker_image:
-        name: "imrds7/calculator2"
+        name: "chinmay30t/calculator2"
         source: pull
       register: docker_pull_result
 
@@ -24,4 +24,4 @@
         state: started
 
     - name: Running container
-      shell: docker run -it -d --name calculator imrds7/calculator2 /bin/bash
+      shell: docker run -it -d --name calculator chinmay30t/calculator2 /bin/bash
