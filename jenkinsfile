@@ -46,8 +46,8 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DockerHubCred') {
-                    sh 'docker tag calculator2 imrds7/calculator2:latest'
-                    sh 'docker push imrds7/calculator2'
+                    sh 'docker tag calculator2 chinmay30t/calculator2:latest'
+                    sh 'docker push chinmay30t/calculator2'
                     }
                  }
             }
@@ -68,12 +68,12 @@ pipeline {
 }
  post {
         success {
-            mail to: 'rohandinkar.sonawane@iiitb.ac.in',
+            mail to: 'ctavarej@gmail.com',
                  subject: "Application Deployment SUCCESS: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "The build was successful!"
         }
         failure {
-            mail to: 'rohandinkar.sonawane@iiitb.ac.in',
+            mail to: 'ctavarej@gmail.com',
                  subject: "Application Deployment FAILURE: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "The build failed."
         }
