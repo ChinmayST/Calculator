@@ -1,7 +1,6 @@
 ---
 - name: Pull Docker Image from Docker Hub
   hosts: localhost
-  remote_user: chinmay30t
   become: false
   tasks:
     - name: Remove existing container if running
