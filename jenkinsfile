@@ -45,7 +45,7 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script{
-                    docker.withRegistry('', 'DockerHubCred') {
+                    docker.withRegistry('', 'DockerHubCre') {
                     sh 'docker tag calculator2 chinmay30t/calculator2:latest'
                     sh 'docker push chinmay30t/calculator2'
                     }
